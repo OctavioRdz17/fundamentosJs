@@ -1,0 +1,36 @@
+
+
+
+**__Condicionales__**
+
+
+las condicionales en javascript se capturan de la siguiente manera
+
+**if**([condicion a cumplirse] )
+{
+[Codigo que se ejecuta al momento de pasar la autenticacion]
+}
+**elseif** ([Nueva condicion de no pasar la anterior])
+{
+[Codigo]
+}
+**else** 
+{
+[Codigo que se ejecuta al no cumplirse ninguna de las anteriores]
+}
+
+
+Funcion ```confirm```
+Con esta funcion podemos preguntar si puede o no aceptar una pregunta
+ejemplo:
+```
+if (confirm (`Vienes con algun mayor a ver la pelicula?.
+Presiona Ok para aceptar y cancelar para negar`)) {
+        alert(`${name} Puede pasar a ver ${starWars7}.
+Aunque su edad es ${age} porque se encuentra acompañado por un Adulto`)
+    }
+    else {
+      alert(`${name} No puede pasar a ver ${starWars7}.
+      tienes ${age} años y necesita tener ${pgStarWars7} `)
+      }
+```
