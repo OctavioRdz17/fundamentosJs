@@ -7,16 +7,15 @@ const dias =[
   "sabado",
   "domingo"
 ]
+function aleatorio(min, max)
+  {
+    return Math.floor(Math.random()*(max-min+1))+min;
+  }
 
-function correr(){
-  const min = 5
-  const max = 15
-  return Math.round (Math.random()*(max-min)+min)
-}
 let totalKms=0;
 let size = dias.length
-for (let i = 0; i < dias.length; i++) {
-  const kms =correr();
+for (let i = 0; i < size; i++) {
+  const kms =aleatorio(5,15);
   totalKms += kms;
   console.log(`El día ${i+1} es ${dias[i]} y se corrio ${kms} kms.`)
 }

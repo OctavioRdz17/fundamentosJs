@@ -34,3 +34,329 @@ Aunque su edad es ${age} porque se encuentra acompañado por un Adulto`)
       tienes ${age} años y necesita tener ${pgStarWars7} `)
       }
 ```
+
+Inventar un idioma. Manipulacion de Strings
+
+Reglas 
+
+1. Si la palabra termina con "ar" se le remueven las ultimas dos letras
+
+2. Si la palabra empieza con "z" se le añade pe al final
+
+
+zorro = zorrope
+zarpar = zarppe
+
+3. Si la palabra tiene mas de 10 letras se debe cortar a lamitad la palabra y unir con un - la palabra
+
+abece-dario
+
+4. si la palabra es un palindromo ninguna de las reglas anteriores cuentan y se devuelve la misma palabra 
+intercalando mayusculas y minusculas
+
+sometemos = SoMeTeMoS
+
+
+
+__Funciones para recordad__
+
+**toLowerCase()** = Convierte el string en mininusculas
+**toUpperCase()** = Convierte el string en mayusculas
+
+**endsWith ("[palabra o letras a evaluar]")**= se utiliza para evaluar si las letras finales del str sin iguales a lo que se pone entre parentesis
+
+**startsWith("[palabra o letras a evaluar]")**= se utiliza para evaluar las primeras letras del str
+
+**[variable] += [agregado]** se utiliza para concatenar la misma variable a algo nuevo
+ejemplo : 
+```
+Str = "1,2"
+Str += "3,4"
+```
+El resultado de un log de Str seria
+Str= 1,2,3,4
+
+
+**split("")** = Esta funcion separa las palabras por el caracter mencionado y lo guarda en un array
+**reverse()** = toma un array y lo intercambia ultimo por  primero cada simbolo
+**join("")** = Toma un array y lo junta ne un string uniendo por el caracter señalado
+ojo:si no declara el caracter se unen sin ningun caracter los strings
+
+**[variable].lenght** = te da el largo del string en valor numerico empieza en 0 lacuenta
+
+**[variable].charAt(i)** = nos da la letra en la que seta el indicador
+
+**?** = simbolo que se utiliza para evaluar una variable booleana
+ej:
+```
+translation+= capitalize ? char.toUpperCase():char.toLowerCase()
+```
+
+**!** = simbolo para negar el resultado de cualquier valor booleano
+
+
+__Bucles__
+
+
+Partes a recordar de la clase
+
+Math.random() = crea un numero aleatorio entre 0 y 1
+Math.floor = redondea hacia abajo un valor
+[var].length = te da la cantidad de elementos en un array
+
+
+**for(let [var], [condicional],var++) {
+[codigo a ejecutarse en el ciclo]
+}**
+
+
+**While**
+
+
+
+&& = operador AND
+[var]++ =suma 1 cada vez que el codigo pasa 
+
+```
+while ([condicional]){
+[codigo a ejecutarse]
+}
+```
+
+
+
+
+**Fechas con Javascript**
+
+
+**Const [var] = new Date()**  formato para propiedad de objeto fecha a una variable
+
+**[var].getFullYear()** Para sacar de la variable el añoa 4 digitos
+**[var].getMonth()** Regresa el mes del año empezando por 0
+**[var].getDay()** Regresa el dia de la variable 
+
+
+Las cantidades de tiempo son calculadas en milisegundos
+
+
+Objetos en javascript
+
+// esto es un objeto literal (literal significa que se le asigna un valor desde el principio o directamente)
+/*
+	EL cuerpo del objeto va entre llaves y se le asigna sus propiedades/valor, las cuales también pueden ser metodos
+*/
+const MiObjetoLiteral = {
+
+	entero: 10,
+	flotante: 20.5,
+	cadena: "hola mundo",
+
+	metodo: function () { // esto es una función anonima, pero que se llamará mediante la propieda del objeto, de nombre "metodo"
+		alert("usastes el metodo de tú objeto literal")
+	},
+
+	metodo2: platzi // creamos un "metodo", pero realmente esto aún no existe
+}
+
+// a las propiedades del objeto literal, se accede mediante: NombreDelObjeto.propiedad (notese el ".")
+
+console.log(MiObjetoLiteral.entero) // 10
+console.log(MiObjetoLiteral.cadena) // "hola mundo"
+
+console.log(MiObjetoLiteral.flotante) // 20.5
+MiObjetoLiteral.flotante = 15.12// se le asigna un nuevo valor a la propiedad del objeto, llamado flotante
+console.log(MiObjetoLiteral.flotante) // 15.12
+
+MiObjetoLiteral.boleano = true// se pueden crear nuevas propiedades desde afuera
+console.log(MiObjetoLiteral.boleano) // imprime la nueva propiedad creada en la linea anterior (true)
+
+MiObjetoLiteral.metodo(); // aqui llamamos el metodo del objeto e imprime su alert.
+MiObjetoLiteral.metodo(); // aqui llamamos el metodo del objeto e imprime su alert.
+
+// creamos nuestra función "platzi", que estaba siendo utilizada por nuestro objeto, pero que hasta ahora no habia sido creada
+functionplatzi() {
+	console.log("siuuuuuuuuuhh")
+}
+
+MiObjetoLiteral.metodo2() // se puede acceder a la función de esta manera....
+platzi() // ....o de esta manera ```
+
+
+
+
+***Metodos en objetos***
+
+los objetos pueden tambien contener funciones para ser llamadas con un atributo de objeto
+ejemplo:
+
+```
+const p1 ={
+  x:0,
+  y:4,
+  moverEnX:function (x){this.x += x},
+  moverEnY:function (y){this.y += y}
+}
+```
+
+
+para reducir los caracteres 
+[var].toFixed()
+
+
+
+**Creando clases**
+```
+Function Punto (x,y){  //regularmente se una mayuscula para declarar clases 
+[codigo a ejecutar]
+}
+
+/*Se crea una funcion normal pero se ocupa una fucnion llamada prototype 
+que agrega a esta funcion funcones adicionales como si fuera una clase
+*/
+
+Punto.prototype.moverEnX = funcion moverEnX (x){
+this.x += x
+}
+para crear las variables con formato de objeto se utiliza la siguiente sintaxis
+
+let p1 = new Punto(0,4)
+const p2 = new Punto (3,0)
+```
+
+
+
+
+**__Creando clases Object.create__**
+```
+//ahora no se cre una funcion si no un objeto con la siguiente sintaxis
+
+let Punto = {
+init: funcion init(x,y){
+this.x = x
+this.y = y
+},
+moverEnX : function moverEnX (){
+this.x += x
+},
+etc
+}
+
+//aqui se crean las variables con el formato de objeto Punto
+let p1 = Object.create(Punto)
+let p2 = Object.create(Punto)
+//se le agregan los valores alas variables atraves de la function
+//que se escribio init (ojo se necesita crear una funcion para asignar los valores en este metodo)
+p1.init (0,4);
+p2.init (3,0);
+
+```
+
+**__Clases de JS__**
+
+```
+//tercer manera de crear clases sintaxis SUGAR
+
+
+**Scope de las Variables**
+
+**Scope** = conjunto de variables que podemos acceder en determinada linea de codigo
+
+**var** = es para una variable pero se debe de limitar su uso ya que se queda activa durante toda la fucnion
+
+**let** = es como var pero solo vive dentro del las llaves donde se declara utiliza menos memoria
+
+**const** = se utiliza par almacenar datos que no van a cambiar durante el ciclo del programa
+
+
+
+
+closure = funciones que recuerdan donde fueron creadas pero que recuerdan el estado actual de las variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
