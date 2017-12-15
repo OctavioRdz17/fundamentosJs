@@ -275,8 +275,72 @@ closure = funciones que recuerdan donde fueron creadas pero que recuerdan el est
 
 
 
+Algunos ejemplos que realize de estas funciones
+
+Empezando por el **numeros.reduce**
+
+```
+//escrita con arrow function suma
+let suma = (...numeros)=> numeros.reduce((acum,numero)=>acum += numero,0)
+suma (3,3,4,5)// (3,6,10,15) = 15
+
+//resta
+let resta = (...numeros)=> numeros.reduce((acum,numero)=>acum -= numero,100)
+resta(10,50,5) // (90,40,35) = 35
+
+//multiplicacion
+let multi = (...numeros)=> numeros.reduce((acum,numero)=>acum = acum * numero,1)
+multi(2,3,4) // (2,6,24) = 24
+ 
+//divicion
+let divi = (...numeros)=> numeros.reduce((acum,numero) => acum = acum / numero,1)
+divi(2,2) // (.5,.25) = .25
+```
+
+Para el **numeros.map**
+
+```
+const dobles = (...numeros)=>numeros.map(numero => numero*2)
+dobles (2,4,5,56)// (4,8,10,112)
+//misma funcion para dividir entre dos
+const mitades = (...numeros)=> numeros.map(numero=>numero/2)
+mitades (10,5,20,30) //(10,2.5,10,15)
+
+//sumando a cada numero 3
+const sumNum = (...numeros) => numeros.map(numero => numero + 3 )
+sumNum (10,3,45) // (13,6,48)
+
+//sumando el numero anterior
+let guardadito = 0
+const sumNum = (...numeros) => numeros.map(numero => {
+  numero += guardadito
+  guardadito=numero
+  return numero
+}
+ )
+sumNum (10,10,5,5) // resultado (10,20,25,30)
+```
 
 
+Para el ultimo caso **numeros.filter**
+
+```
+//solo numeros pares
+const pares = (...numeros) => numeros.filter(numero =>numero%2 == 0);
+pares (3,56,78,23,12453,3243454) // resultado (56,78,3243454)
+
+//menor que 10
+const menorQue10 = (...numeros) => numeros.filter(numero => numero < 10)
+menorQue10(8,9,10,11,12) // resultado (8,9)
+
+
+//agregando condicionales
+const divisible = (...numeros) => numeros.filter(numero=>numero % 3 ==0 && numero % 5==0)
+divisible (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,30,45,)
+//resultado (15,30,45)
+
+
+```
 
 
 

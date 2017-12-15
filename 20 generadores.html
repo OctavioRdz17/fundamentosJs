@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20 generadores</title>
+  </head>
+  <body>
+    <script>
+      function *fibonacci(){
+        let a=0 , b=1
+        while (true){
+          let f = a
+              a = b
+              b = a + f
+          let reset = yield f
+          if (reset) a = 0, b = 1
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clear Interval</title>
+  </head>
+  <body>
+    <h1 id='timer'>Ha pasado 0 segundos</h1>
+    <button type="button" id="botCancelar">CANCELAR</button>
+    <script>
+    let x=0
+      let timeout =   setInterval(()=>{
+          x++
+          timer.textContent = `Han pasado ${x} segundos`;
+          if (x == 1)   {
+          return  timer.textContent = 'Ha pasado 1 segundo'
+          }
+          if (x >= 6) {
+            return timer.textContent = 'Se termino el tiempo'}
+        },1000)
+    const cancelarboton = document.getElementById('botCancelar')
+
+    cancelarboton.addEventListener('click',()=>clearInterval(timeout))
+
+    </script>
+
+  </body>
+</html>

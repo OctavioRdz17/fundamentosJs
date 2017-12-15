@@ -1,0 +1,34 @@
+<!--  sincronia es cuando se ejecuta las cosas con el scan del navegador -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Callbacks Leonidas</title>
+  </head>
+  <body>
+    <h1 id ='textoh1'>Estoy despertando</h1>
+    <script >
+      const DESPERTAR = 3000
+      const DUCHA = 2000
+      const VESTIRSE = 2000
+      const DESAYUNAR = 3000
+      const PLATZI = 5000
+      const $textoh1 = document.getElementById('textoh1')
+      setTimeout(()=>{
+        $textoh1.textContent = 'Ahora me estoy duchando...'
+        setTimeout(()=>{
+          $textoh1.textContent = 'Ahora me estoy vistiendo...'
+          setTimeout(()=>{
+            $textoh1.textContent = 'Ahora estoy desayunando...'
+            setTimeout(()=>{
+              $textoh1.textContent = 'Ahora estoy estudiando en Platzi...'
+              setTimeout(()=>{
+                $textoh1.textContent = 'Uff aprendi mucho hoy'
+              },PLATZI)
+            },DESAYUNAR)
+          },VESTIRSE)
+        },DUCHA)
+      },DESPERTAR)
+    </script>
+  </body>
+</html>

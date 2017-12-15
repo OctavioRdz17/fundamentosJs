@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clear Timeout</title>
+  </head>
+  <body>
+    <button type="button" id="botCancelar">CANCELAR</button>
+    <script>
+      const timeout = setTimeout(()=>{
+        alert ('Se te cargo el payaso BOOOOOM')
+      },1000)
+    const cancelarboton = document.getElementById('botCancelar')
+
+    cancelarboton.addEventListener('click',()=>{
+      clearTimeout(timeout)
+    })
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18 Memoizacion</title>
+  </head>
+  <body>
+      <script>
+      let contadorRec = 0
+      let contadorMemo = 0
+    function fibMemo (num,mem=[]){ //se tiene que asignar el objeto
+      contadorMemo++
+      if (mem[num]) return mem[num]
+      if (num == 1) return 0
+      if (num == 2) return 1
+      return mem[num] = fibMemo(num-1,mem)+ fibMemo(num-2,mem) //se manda el objeto relleno otraves en el return
+    }
+    function fibRec (num){ // en esta forma se utiliza mas poder de computo
+      contadorRec++
+      if (num == 1) return 0
+      if (num == 2) return 1
+      return fibRec(num-1)+fibRec(num-2)
+    }
+      </script>
+  </body>
+</html>

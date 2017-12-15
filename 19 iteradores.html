@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>19 Iteradores</title>
+  </head>
+  <body>
+    <script>
+      function fibonacci(){
+        let a=0 , b=1
+        return {
+          next: function(){
+            let f = a
+            a = b
+            b = f + a
+            return {value:f , done:false}
+          }
+        }
+      }
+      const fibo = {nombre:'tavo'}
+      fibo[Symbol.iterator] = fibonacci
+      let i = 0
+      for (let value of fibo){
+        console.log(value)
+        i++
+        if(i>=20) break
+      }
+      // fibo.next()
+      // .value: //0
+      // .value: //1
+      // .value: //1
+      // .value: //2
+      // .value: //3
+      // .value: //5
+      // .value: //8
+      //
+      // .done: false
+
+
+
+
+    </script>
+
+  </body>
+</html>
